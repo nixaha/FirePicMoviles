@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Platillos
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list *ngFor="let platillo of platillos | async">
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src={{platillo.img}}>
+      </ion-thumbnail>
+      <h2>{{platillo.nombre}}</h2>
+      <p>{{platillo.sabor}}</p>
+      <P>{{platillo.precio}}</P>
+      <button ion-button clear item-end [navPush]="vista" (tap)="detalles(platillo)">View</button>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button block [navPush]="bebi">Bebidas</button>
+  <button ion-button block [navPush]="agregar">Agregar Platillos</button>
+
+</ion-content>
