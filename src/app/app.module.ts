@@ -16,6 +16,10 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { environment } from '../environment/environment';
 
+//plugins camara y galeria
+import { Camera } from '@ionic-native/camera';
+import { ImagePicker } from '@ionic-native/image-picker';
+
 
 @NgModule({
   declarations: [
@@ -43,6 +47,8 @@ import { environment } from '../environment/environment';
   providers: [
     StatusBar,
     SplashScreen,
+    Camera,
+    ImagePicker,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

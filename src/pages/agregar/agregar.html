@@ -2,6 +2,7 @@
 
   <ion-navbar>
     <ion-title>Agregar</ion-title>
+    <button ion-button clear item-end (tap)="close()">Cerrar</button>
   </ion-navbar>
 
 </ion-header>
@@ -28,7 +29,25 @@
             <ion-label fixed>Precio</ion-label>
             <ion-input type="number" value=""></ion-input>
           </ion-item>
-  </ion-list>
 
+          <ion-item *ngIf="imagePreview">
+            <img [src]="imagePreview">
+          </ion-item>
+
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <button ion-button block (tap)="showCamera()">Cámara </button>
+              </ion-col>
+              <ion-col>
+                <button ion-button block (tap)="showGalery()">Galería</button>
+              </ion-col>
+            </ion-row>
+          
+          </ion-grid>
+  <button ion-button block (tap)="agregarPlatillo()">Agregar</button>
+
+  </ion-list>
+  
 
 </ion-content>

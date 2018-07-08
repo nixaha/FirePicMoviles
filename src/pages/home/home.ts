@@ -6,14 +6,13 @@ import { map } from 'rxjs/operators';
 import { Platillo} from '../../commons/platillo'
 import { BebidasPage } from '../../pages/bebidas/bebidas';
 import { VistaPage } from '../../pages/vista/vista';
+import { AgregarPage } from '../agregar/agregar';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-
-  bebi:any = BebidasPage;
   vista:any = VistaPage;
 
   private itemsCollection: AngularFirestoreCollection<Platillo>;
@@ -36,5 +35,14 @@ export class HomePage {
     this.navCtrl.push(VistaPage, {
       id: platillo
     })
+  }
+
+  iraBebida(){
+    this.navCtrl.push(BebidasPage);
+  }
+
+  iraAgregar(){
+    const modal = this.modalCtrl.create(AgregarPage);
+    modal.present();
   }
 }

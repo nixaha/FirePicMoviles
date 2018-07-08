@@ -19,7 +19,7 @@
     </ion-item>
   </ion-list>
 
-  <button ion-button block [navPush]="bebi">Bebidas</button>
-  <button ion-button block [navPush]="agregar">Agregar Platillos</button>
+  <button ion-button block (tap)="iraBebida()">Bebidas</button>
+  <button ion-button block (tap)="iraAgregar()">Agregar Platillos</button>
 
 </ion-content>
